@@ -1,0 +1,21 @@
+﻿@model OdeToFood.Models.RestaurantReview
+
+<tr>
+    <td>
+        @Html.DisplayFor(m => Model.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(m => Model.City)
+    </td>
+    <td>
+        @Html.DisplayFor(m => Model.Country)
+    </td>
+    <td>
+        @Html.DisplayFor(m => Model.Rating)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = Model.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+    </td>
+</tr>
