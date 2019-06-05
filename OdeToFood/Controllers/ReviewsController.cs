@@ -9,6 +9,16 @@ namespace OdeToFood.Controllers
 {
     public class ReviewsController : Controller
     {
+        [ChildActionOnly]
+        public ActionResult BestReview()
+        {
+            var bestReview =
+                from r in _reviews
+                orderby r.Rating descending
+                select r;
+
+            return PartialView("_Review", bestReview.First());
+        }
         // GET: Reviews
         public ActionResult Index()
         {
